@@ -1,0 +1,95 @@
+/* font for title: */
+@font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
+    format("truetype");
+  font-style: normal;
+}
+:root {
+  --color-txt-white: #fff;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  font-family: "Merriweather";
+  font-size: 60px;
+  color: var(--color-txt-white);
+  background-color: black;
+}
+/* Несколько слов про шрифт Inter, представитель вариативных
+ или вариабельных шрифтов (variable fonts).
+Это новые шрифты, которые появились только в конце 2016 года.
+ Их особенность - один файл шрифтов для любого стиля. Для обычного шрифта, 
+ если в макете используется два стиля: regular и bold, нужно загрузить два файла шрифта. 
+ Для вариативного шрифта загружается только один файл,
+  содержащий в себе любой вариант начертания.
+Вариативные шрифты можно использовать точно так же, как обычные, 
+но на самом деле возможностей у них намного больше. Для обычных шрифтов свойство
+ font-weight принимает значения от 100 до 900 с интервалом 100, для вариантивных
+  шрифтов это может быть любое целое число в диапазоне от 1 до 999. Для обычных
+   шрифтов свойство font-style принимает два значения normal и italic, 
+   для вариативных можно указать угол наклона oblique от –90deg до 90deg.
+    Свойство font-stretch вариативных шрифтов меняется от 50% (узкое начертание)
+     до 200% (широкое начертание), нормальной пропорции соответствует 100%. 
+     И есть ещё свойство font-optical-sizing, которое изменяет внешний вид шрифта
+      в зависимости от его размера. */
+.header__flex-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  background-color: black;
+}
+.logo-header {
+  width: 50px;
+  height: 50px;
+}
+.nav-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
