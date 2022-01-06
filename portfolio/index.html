@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/img/logo_hover.ico" />
+    <link rel="icon" href="./assets/logo.ico" />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Portfolio</title>
   </head>
@@ -12,7 +12,7 @@
     <header>
       <div class="container header__flex-box">
         <a href="/" aria-label="link to Portfolio page">
-          <img src="./assets/img/logo.png" alt="logo" class="logo-header"
+          <img src="./assets/svg/logo.svg" alt="logo" class="logo-header"
         /></a>
         <nav class="nav">
           <ul class="nav-list">
@@ -52,22 +52,22 @@
           <h2 id="skills">Skills</h2>
           <ul>
             <li>
-              <img src="" alt="" />
+              <img src="./assets/svg/skills-camera.svg" alt="" />
               <p>Digital photography</p>
               <p>High-quality photos in the studio and on the nature</p>
             </li>
             <li>
-              <img src="" alt="" />
+              <img src="./assets/svg/skills-video.svg" alt="" />
               <p>Video shooting</p>
               <p>Capture your moments so that they always stay with you</p>
             </li>
             <li>
-              <img src="" alt="" />
+              <img src="./assets/svg/skills-image.svg" alt="" />
               <p>Retouch</p>
               <p>I strive to make photography surpass reality</p>
             </li>
             <li>
-              <img src="" alt="" />
+              <img src="./assets/svg/skills-microphone.svg" alt="" />
               <p>Audio</p>
               <p>
                 Professional sounds recording for video, advertising, portfolio
@@ -83,7 +83,7 @@
             <li><button type="button">Winter</button></li>
             <li><button type="button">Spring</button></li>
             <li><button type="button">Summer</button></li>
-            <li><button type="button" active>Autumn</button></li>
+            <li><button type="button">Autumn</button></li>
           </ul>
           <ul>
             <li>
@@ -182,17 +182,11 @@
       </section>
       <section>
         <div class="container">
-          <h2>Contact me</h2>
+          <h2 id="contacts">Contact me</h2>
           <form>
             <input type="email" name="email" required />
-            <input type="phone" name="phone" required />
-            <textarea
-              name="message"
-              id=""
-              cols="30"
-              rows="10"
-              required
-            ></textarea>
+            <input type="tel" name="tel" required />
+            <textarea name="message" cols="30" rows="10" required></textarea>
             <button type="submit" disabled>Send message</button>
           </form>
         </div>
@@ -200,20 +194,64 @@
     </main>
     <footer>
       <div class="container">
-        <div><span>©</span><span>2022</span><a href="">github</a></div>
-        <p><a href="">Rolling Scopes School</a></p>
+        <div>
+          <span>©</span><span>2022</span
+          ><a
+            href="https://github.com/MarinaTripetska"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="link to author's github"
+            >github</a
+          >
+        </div>
+        <p>
+          <a
+            href="https://rs.school/js-stage0/ "
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="link to course"
+            >Rolling Scopes School</a
+          >
+        </p>
         <ul>
           <li>
-            <img src="./assets/svg/instagram.svg" alt="" />
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to instagram"
+            >
+              <img src="./assets/svg/instagram.svg" alt=""
+            /></a>
           </li>
           <li>
-            <img src="./assets/svg/facebook.svg" alt="" />
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to facebook"
+              ><img src="./assets/svg/facebook.svg" alt=""
+            /></a>
           </li>
           <li>
-            <img src="./assets/svg/twitter.svg" alt="" />
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to twitter"
+            >
+              <img src="./assets/svg/twitter.svg" alt=""
+            /></a>
           </li>
           <li>
-            <img src="./assets/svg/pinterest.svg" alt="" />
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="link to pinterest"
+            >
+              <img src="./assets/svg/pinterest.svg" alt=""
+            /></a>
           </li>
         </ul>
       </div>
