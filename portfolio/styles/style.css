@@ -29,12 +29,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 15px;
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: var(--color-txt-white);
 }
 
 ul {
@@ -53,43 +51,73 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-.title {
-  font-family: "Merriweather";
-  font-size: 60px;
-  color: var(--color-txt-white);
-  background-color: black;
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
 }
-/* Несколько слов про шрифт Inter, представитель вариативных
- или вариабельных шрифтов (variable fonts).
-Это новые шрифты, которые появились только в конце 2016 года.
- Их особенность - один файл шрифтов для любого стиля. Для обычного шрифта, 
- если в макете используется два стиля: regular и bold, нужно загрузить два файла шрифта. 
- Для вариативного шрифта загружается только один файл,
-  содержащий в себе любой вариант начертания.
-Вариативные шрифты можно использовать точно так же, как обычные, 
-но на самом деле возможностей у них намного больше. Для обычных шрифтов свойство
- font-weight принимает значения от 100 до 900 с интервалом 100, для вариантивных
-  шрифтов это может быть любое целое число в диапазоне от 1 до 999. Для обычных
-   шрифтов свойство font-style принимает два значения normal и italic, 
-   для вариативных можно указать угол наклона oblique от –90deg до 90deg.
-    Свойство font-stretch вариативных шрифтов меняется от 50% (узкое начертание)
-     до 200% (широкое начертание), нормальной пропорции соответствует 100%. 
-     И есть ещё свойство font-optical-sizing, которое изменяет внешний вид шрифта
-      в зависимости от его размера. */
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header {
+  padding: 20px 0;
+}
+
 .header__flex-box {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   align-items: center;
-  color: white;
-  background-color: black;
 }
+
 .logo-header {
   width: 50px;
   height: 50px;
 }
+.navigation-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 550px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
 .nav-link {
-  font-family: "Inter", sans-serif;
   font-weight: 400;
+  font-size: 20px;
+  line-height: 2.5;
+
+  padding: 15px 0;
+}
+
+.background-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+
+  width: 100%;
+  max-width: 100vw;
+  height: 910px;
+
+  background-image: url("../assets/img/bg1@1x.png");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.title {
+  font-family: "Merriweather";
+  font-size: 60px;
 }
