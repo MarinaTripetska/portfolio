@@ -73,6 +73,22 @@ h3 {
   padding-top: 100px;
 }
 
+.btn {
+  display: block;
+  padding: 7px;
+  height: 55px;
+  width: 100%;
+  max-width: 220px;
+
+  font-size: 20px;
+  text-align: center;
+
+  border: solid 1px var(--color-gold-active);
+  cursor: pointer;
+}
+
+/* Header */
+
 .header {
   padding: 20px 0;
 }
@@ -192,20 +208,8 @@ h3 {
 .banner__btn {
   margin-top: 25px;
 
-  padding: 7px;
-  height: 55px;
-  width: 100%;
-  max-width: 220px;
-
-  font-size: 20px;
-  text-align: center;
-
-  border: none;
-
   color: var(--color-black);
   background-color: var(--color-gold-active);
-
-  cursor: pointer;
 }
 
 /* section Skills */
@@ -256,21 +260,11 @@ h3 {
 .portfolio__btn-item {
   flex: 1 1 100%;
   max-width: 220px;
-  min-height: 55px;
 }
 
 .portfolio__btn {
-  padding: 7px;
-  width: 100%;
-  min-height: 55px;
-  text-align: center;
-  font-size: 20px;
   color: var(--color-gold-active);
-
   background-color: inherit;
-  border: 1px solid var(--color-gold-active);
-
-  cursor: pointer;
 }
 
 .portfolio__btn--active {
@@ -292,4 +286,66 @@ h3 {
 }
 
 .portfolio__gallery-img {
+}
+
+/* Section Video */
+
+.video-thumb {
+  position: relative;
+}
+.video__btn-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+/* Section Price  */
+
+.price__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.price__item {
+  flex: 1 1 100%;
+  max-width: 450px;
+  padding: 43px;
+
+  min-height: 505px;
+  text-align: center;
+
+  border: solid 3px var(--color-gold-active);
+}
+
+.card__title {
+  font-family: "Merriweather";
+  font-size: 28px;
+}
+
+.card__price {
+  margin-top: 20px;
+  font-family: Merriweather;
+  font-size: 24px;
+  color: var(--color-gold-active);
+}
+
+.card__options-list {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.card__order-btn {
+  margin: 40px auto 0 auto;
+
+  color: var(--color-black);
+  background-color: var(--color-gold-active);
 }

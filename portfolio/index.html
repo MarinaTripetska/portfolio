@@ -62,7 +62,7 @@
               Save sincere emotions, romantic feelings and happy moments of life
               together with professional photographer Alexa Rise
             </p>
-            <button type="button" class="banner__btn">Hire me</button>
+            <button type="button" class="btn banner__btn">Hire me</button>
           </div>
         </div>
       </section>
@@ -111,18 +111,18 @@
           <h2 id="portfolio" class="section__title">Portfolio</h2>
           <ul class="portfolio__btn-set">
             <li class="portfolio__btn-item">
-              <button type="button" class="portfolio__btn">Winter</button>
+              <button type="button" class="btn portfolio__btn">Winter</button>
             </li>
             <li class="portfolio__btn-item">
-              <button type="button" class="portfolio__btn">Spring</button>
+              <button type="button" class="btn portfolio__btn">Spring</button>
             </li>
             <li class="portfolio__btn-item">
-              <button type="button" class="portfolio__btn">Summer</button>
+              <button type="button" class="btn portfolio__btn">Summer</button>
             </li>
             <li class="portfolio__btn-item">
               <button
                 type="button"
-                class="portfolio__btn portfolio__btn--active"
+                class="btn portfolio__btn portfolio__btn--active"
               >
                 Autumn
               </button>
@@ -187,52 +187,71 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section video">
         <div class="container">
           <h2 id="video" class="section__title">Video</h2>
-          <img src="./assets/img/video-player.jpg" alt="" />
+          <div class="video-thumb">
+            <button type="button" class="video__btn-play">
+              <img src="./assets/svg/player-play.svg" alt="" />
+            </button>
+            <img src="./assets/img/video-player.jpg" alt="" />
+          </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section price">
         <div class="container">
           <h2 id="price" class="section__title">Price</h2>
-          <ul>
-            <li>
-              <h3>Standard</h3>
-              <p>500 $</p>
-              <ul>
+          <ul class="price__list">
+            <li class="price__item card">
+              <h3 class="card__title">Standard</h3>
+
+              <p class="card__price">500 $</p>
+
+              <ul class="card__options-list">
                 <li>One location</li>
                 <li>120 photos in color</li>
                 <li>12 photos in retouch</li>
                 <li>Readiness 2-3 weeks</li>
                 <li>Make up, visage</li>
               </ul>
-              <button type="button">Order shooting</button>
+              <button type="button" class="btn card__order-btn">
+                Order shooting
+              </button>
             </li>
-            <li>
-              <h3>Premium</h3>
-              <p>700 $</p>
-              <ul>
+
+            <li class="price__item card">
+              <h3 class="card__title">Premium</h3>
+
+              <p class="card__price">700 $</p>
+
+              <ul class="card__options-list">
                 <li>One or two locations</li>
                 <li>200 photos in color</li>
                 <li>20 photos in retouch</li>
                 <li>Readiness 1-2 weeks</li>
                 <li>Make up, visage</li>
               </ul>
-              <button type="button">Order shooting</button>
+              <button type="button" class="btn card__order-btn">
+                Order shooting
+              </button>
             </li>
-            <li>
-              <h3>Gold</h3>
-              <p>1000 $</p>
-              <ul>
+
+            <li class="price__item card">
+              <h3 class="card__title">Gold</h3>
+
+              <p class="card__price">1000 $</p>
+
+              <ul class="card__options-list">
                 <li>Three locations or more</li>
                 <li>300 photos in color</li>
                 <li>50 photos in retouch</li>
                 <li>Readiness 1 week</li>
                 <li>Make up, visage, hairstyle</li>
               </ul>
-              <button type="button">Order shooting</button>
+              <button type="button" class="btn card__order-btn">
+                Order shooting
+              </button>
             </li>
           </ul>
         </div>
