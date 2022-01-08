@@ -138,7 +138,7 @@ h3 {
   font-weight: bold;
   font-size: 40px;
 
-  margin: 0 auto;
+  margin: 0 auto 60px auto;
   color: var(--color-gold-active);
 }
 
@@ -211,8 +211,6 @@ h3 {
 /* section Skills */
 
 .skills__list {
-  margin-top: 60px;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -244,4 +242,54 @@ h3 {
   margin-top: 20px;
 
   font-size: 18px;
+}
+
+/* Section Portfolio */
+
+.portfolio__btn-set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.portfolio__btn-item {
+  flex: 1 1 100%;
+  max-width: 220px;
+  min-height: 55px;
+}
+
+.portfolio__btn {
+  padding: 7px;
+  width: 100%;
+  min-height: 55px;
+  text-align: center;
+  font-size: 20px;
+  color: var(--color-gold-active);
+
+  background-color: inherit;
+  border: 1px solid var(--color-gold-active);
+
+  cursor: pointer;
+}
+
+.portfolio__btn--active {
+  color: var(--color-black);
+  background-color: var(--color-gold-active);
+}
+
+.portfolio__gallery-list {
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.portfolio__gallery-item {
+}
+
+.portfolio__gallery-img {
 }
