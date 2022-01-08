@@ -33,6 +33,8 @@ body {
   justify-content: space-between;
 
   font-family: "Inter", sans-serif;
+  line-height: 2;
+
   background-color: var(--color-black);
   color: var(--color-txt-white);
 }
@@ -66,6 +68,11 @@ h3 {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.section {
+  padding-top: 100px;
+}
+
 .header {
   padding: 20px 0;
 }
@@ -119,6 +126,32 @@ h3 {
 }
 
 /* main section */
+
+.section__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+  max-width: 700px;
+  font-family: Merriweather;
+  font-weight: bold;
+  font-size: 40px;
+
+  margin: 0 auto;
+  color: var(--color-gold-active);
+}
+
+.section__title:not(:last-child)::before,
+.section__title:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  max-width: 273px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-gold-active);
+}
+
 .banner {
   padding: 160px 0 330px 0;
 }
@@ -137,6 +170,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: top;
 }
+
 .banner__txt-box {
   position: relative;
   left: 60px;
@@ -144,16 +178,15 @@ h3 {
   max-width: 500px;
 }
 
-.title {
+.banner__title {
   font-family: "Merriweather";
   font-weight: bold;
   font-size: 60px;
-  line-height: 2;
 }
+
 .banner__txt {
   margin-top: 10px;
   font-size: 20px;
-  line-height: 2;
 }
 
 .banner__btn {
@@ -165,7 +198,6 @@ h3 {
   max-width: 220px;
 
   font-size: 20px;
-  line-height: 2;
   text-align: center;
 
   border: none;
@@ -174,4 +206,42 @@ h3 {
   background-color: var(--color-gold-active);
 
   cursor: pointer;
+}
+
+/* section Skills */
+
+.skills__list {
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+
+  text-align: center;
+}
+
+.skills__item {
+  flex: 1 1 100%;
+  max-width: 320px;
+  min-width: 240px;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills__item-title {
+  margin-top: 50px;
+
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.skills__item-txt {
+  margin-top: 20px;
+
+  font-size: 18px;
 }
