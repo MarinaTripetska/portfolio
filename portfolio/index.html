@@ -7,41 +7,43 @@
     <link rel="icon" href="./assets/logo.ico" />
     <link rel="stylesheet" href="./styles/default.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <title>Portfolio</title>
+    <title>portfolio</title>
   </head>
   <body>
     <header class="header">
       <div class="container header__flex-box">
-        <a href="/" aria-label="link to Portfolio page">
-          <img src="./assets/svg/logo.svg" alt="logo" class="logo-header"
-        /></a>
+        <a href="/" aria-label="link to Portfolio page" class="logo">
+          <svg class="logo__icon">
+            <use xlink:href="./assets/svg/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
 
-        <div class="navigation-box">
-          <nav class="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="#skills" class="nav-link">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a href="#video" class="nav-link">Video</a>
-              </li>
-              <li class="nav-item">
-                <a href="#price" class="nav-link">Price</a>
-              </li>
-              <li class="nav-item">
-                <a href="#contacts" class="nav-link">Contacts</a>
-              </li>
-            </ul>
-          </nav>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li>
+              <a href="#skills" class="nav__link">Skills</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#video">Video</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#price">Price</a>
+            </li>
+            <li>
+              <a class="nav__link" href="#contacts" class="nav-link"
+                >Contacts</a
+              >
+            </li>
+          </ul>
+        </nav>
 
-          <div class="langs">
-            <a href="" class="lang-active">en </a>
-            <span> / </span>
-            <a href=""> ru</a>
-          </div>
+        <div class="langs">
+          <a href="" class="lang-active">en </a>
+          <span> / </span>
+          <a href=""> ru</a>
         </div>
       </div>
     </header>
@@ -66,7 +68,11 @@
           <h2 id="skills" class="section__title">Skills</h2>
           <ul class="skills__list">
             <li class="skills__item">
-              <img src="./assets/svg/skills-camera.svg" alt="" />
+              <svg class="skills__icon" width="62" height="50">
+                <use
+                  xlink:href="./assets/svg/sprite.svg#icon-skills-camera"
+                ></use>
+              </svg>
               <p class="skills__item-title">Digital photography</p>
               <p class="skills__item-txt">
                 High-quality photos in the studio and on the nature
@@ -74,7 +80,12 @@
             </li>
 
             <li class="skills__item">
-              <img src="./assets/svg/skills-video.svg" alt="" />
+              <svg class="skills__icon" width="60" height="50">
+                <use
+                  xlink:href="./assets/svg/sprite.svg#icon-skills-video"
+                ></use>
+              </svg>
+
               <p class="skills__item-title">Video shooting</p>
               <p class="skills__item-txt">
                 Capture your moments so that they always stay with you
@@ -82,7 +93,11 @@
             </li>
 
             <li class="skills__item">
-              <img src="./assets/svg/skills-image.svg" alt="" />
+              <svg class="skills__icon" width="66" height="50">
+                <use
+                  xlink:href="./assets/svg/sprite.svg#icon-skills-image"
+                ></use>
+              </svg>
               <p class="skills__item-title">Retouch</p>
               <p class="skills__item-txt">
                 I strive to make photography surpass reality
@@ -90,7 +105,11 @@
             </li>
 
             <li class="skills__item">
-              <img src="./assets/svg/skills-microphone.svg" alt="" />
+              <svg class="skills__icon" width="32" height="50">
+                <use
+                  xlink:href="./assets/svg/sprite.svg#icon-skills-microphone"
+                ></use>
+              </svg>
               <p class="skills__item-title">Audio</p>
               <p class="skills__item-txt">
                 Professional sounds recording for video, advertising, portfolio
@@ -186,7 +205,11 @@
           <h2 id="video" class="section__title">Video</h2>
           <div class="video-thumb">
             <button type="button" class="video__btn-play">
-              <img src="./assets/svg/player-play.svg" alt="" />
+              <svg class="video__btn-icon">
+                <use
+                  xlink:href="./assets/svg/sprite.svg#icon-player-play"
+                ></use>
+              </svg>
             </button>
             <img src="./assets/img/video-player.jpg" alt="" />
           </div>
@@ -299,19 +322,19 @@
             target="_blank"
             rel="noopener noreferrer"
             aria-label="link to author's github"
+            class="footer__link"
             >github</a
           >
         </div>
 
-        <p>
-          <a
-            href="https://rs.school/js-stage0/ "
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="link to course"
-            >Rolling Scopes School</a
-          >
-        </p>
+        <a
+          href="https://rs.school/js-stage0/ "
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="link to course"
+          class="footer__link"
+          >Rolling Scopes School</a
+        >
 
         <ul class="social-link__list">
           <li>
@@ -322,8 +345,10 @@
               aria-label="link to instagram"
               class="social-link__item"
             >
-              <img src="./assets/svg/instagram.svg" alt=""
-            /></a>
+              <svg class="social-link__icon">
+                <use xlink:href="./assets/svg/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
           </li>
           <li>
             <a
@@ -332,8 +357,11 @@
               rel="noopener noreferrer"
               aria-label="link to facebook"
               class="social-link__item"
-              ><img src="./assets/svg/facebook.svg" alt=""
-            /></a>
+            >
+              <svg class="social-link__icon">
+                <use xlink:href="./assets/svg/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
           </li>
           <li>
             <a
@@ -343,8 +371,10 @@
               aria-label="link to twitter"
               class="social-link__item"
             >
-              <img src="./assets/svg/twitter.svg" alt=""
-            /></a>
+              <svg class="social-link__icon">
+                <use xlink:href="./assets/svg/sprite.svg#icon-twitter"></use>
+              </svg>
+            </a>
           </li>
           <li>
             <a
@@ -354,8 +384,10 @@
               aria-label="link to pinterest"
               class="social-link__item"
             >
-              <img src="./assets/svg/pinterest.svg" alt=""
-            /></a>
+              <svg class="social-link__icon">
+                <use xlink:href="./assets/svg/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
           </li>
         </ul>
       </div>
