@@ -13,6 +13,8 @@
 }
 :root {
   --color-txt-white: #fff;
+  --color-black: #000;
+  --color-gold-active: #bdae82;
 }
 
 *,
@@ -31,7 +33,7 @@ body {
   justify-content: space-between;
 
   font-family: "Inter", sans-serif;
-  background-color: #000;
+  background-color: var(--color-black);
   color: var(--color-txt-white);
 }
 
@@ -79,13 +81,14 @@ h3 {
   width: 50px;
   height: 50px;
 }
+
 .navigation-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  width: 100%;
-  max-width: 550px;
+  gap: 36px;
+  /* width: 100%;
+  max-width: 550px; */
 }
 
 .nav-list {
@@ -101,8 +104,26 @@ h3 {
 
   padding: 15px 0;
 }
+.langs {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
 
-.background-banner {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.lang-active {
+  color: var(--color-gold-active);
+}
+
+/* main section */
+.banner {
+  padding: 160px 0 330px 0;
+}
+
+.banner__bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -116,8 +137,41 @@ h3 {
   background-repeat: no-repeat;
   background-position: top;
 }
+.banner__txt-box {
+  position: relative;
+  left: 60px;
+
+  max-width: 500px;
+}
 
 .title {
   font-family: "Merriweather";
+  font-weight: bold;
   font-size: 60px;
+  line-height: 2;
+}
+.banner__txt {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 2;
+}
+
+.banner__btn {
+  margin-top: 25px;
+
+  padding: 7px;
+  height: 55px;
+  width: 100%;
+  max-width: 220px;
+
+  font-size: 20px;
+  line-height: 2;
+  text-align: center;
+
+  border: none;
+
+  color: var(--color-black);
+  background-color: var(--color-gold-active);
+
+  cursor: pointer;
 }
