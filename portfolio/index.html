@@ -73,7 +73,7 @@
 
       <section class="section skills">
         <div class="container">
-          <h2 id="skills" class="section__title">Skills</h2>
+          <h2 id="skills" class="section__title skills__title">Skills</h2>
           <ul class="skills__list">
             <li class="skills__item">
               <svg class="skills__icon" width="62" height="50">
@@ -219,7 +219,13 @@
                 ></use>
               </svg>
             </button>
-            <img src="./assets/img/video-player.jpg" alt="" />
+            <picture class="player-plaseholder">
+              <source
+                srcset="./assets/img/video-player-tablet.jpg 1x"
+                type="image/jpg"
+                media="(max-width:768px)" />
+              <img src="./assets/img/video-player.jpg" alt=""
+            /></picture>
           </div>
         </div>
       </section>
@@ -340,7 +346,7 @@
           target="_blank"
           rel="noopener noreferrer"
           aria-label="link to course"
-          class="footer__link"
+          class="footer__link footer__link--school"
           >Rolling Scopes School</a
         >
 
@@ -393,7 +399,7 @@
               class="social-link__item"
             >
               <svg class="social-link__icon">
-                <use xlink:href="./assets/svg/sprite.svg#icon-instagram"></use>
+                <use xlink:href="./assets/svg/sprite.svg#icon-pinterest"></use>
               </svg>
             </a>
           </li>
