@@ -8,6 +8,12 @@
   font-weight: 700;
 }
 @font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
   font-family: "Inter", sans-serif;
   src: url("../assets/fonts/Inter-VariableFont_slnt\,wght.ttf")
     format("truetype");
@@ -21,9 +27,6 @@
 
   --transition-duration: 350ms;
   --transition-func: ease-in-out;
-}
-html {
-  /* outline: 1px solid tomato; */
 }
 
 body {
@@ -51,6 +54,51 @@ body {
 }
 .section {
   padding-top: 100px;
+}
+@media screen and (max-width: 768px) {
+  .section {
+    padding-top: 80px;
+  }
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+  max-width: 700px;
+  font-family: Merriweather;
+  font-weight: bold;
+  font-size: 40px;
+
+  margin: 0 auto 60px auto;
+  color: var(--color-gold-active);
+}
+
+@media screen and (max-width: 768px) {
+  .section__title {
+    padding: 20px 0;
+    max-width: 364px;
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}
+
+.section__title::before,
+.section__title::after {
+  content: "";
+  display: inline-block;
+  max-width: 273px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-gold-active);
+}
+@media screen and (max-width: 768px) {
+  .section__title::before,
+  .section__title::after {
+    max-width: 117px;
+  }
 }
 
 .btn {
@@ -84,8 +132,12 @@ body {
   display: flex;
   align-items: center;
 
-  /* for 768 only??? */
-  gap: 20px;
+  gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  .header__flex-box {
+    gap: 20px;
+  }
 }
 .logo {
   display: flex;
@@ -167,8 +219,8 @@ body {
 
 .nav {
   margin-left: auto;
-  margin-right: 36px;
 }
+
 @media screen and (max-width: 768px) {
   .nav {
     display: none;
@@ -208,7 +260,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .langs {
-    width: 85px;
+    width: 80px;
     margin-left: auto;
   }
 }
@@ -219,37 +271,16 @@ body {
 
 /* main section */
 
-.section__title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 20px;
-  max-width: 700px;
-  font-family: Merriweather;
-  font-weight: bold;
-  font-size: 40px;
-
-  margin: 0 auto 60px auto;
-  color: var(--color-gold-active);
-}
-
-.section__title::before,
-.section__title::after {
-  content: "";
-  display: inline-block;
-  max-width: 273px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--color-gold-active);
-}
-
 /* Banner */
 
 .banner {
   padding: 160px 0 330px 0;
 }
-
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 78px 0 152px 0;
+  }
+}
 .banner__bg {
   position: absolute;
   top: 0;
@@ -257,19 +288,30 @@ body {
   z-index: -10;
 
   width: 100%;
-  max-width: 100vw;
+  /* max-width: 100vw; */
   height: 910px;
 
   background-image: url("../assets/img/bg1@1x.png");
   background-repeat: no-repeat;
-  background-position: top;
+  /* background-position: top; */
 }
-
+@media screen and (max-width: 768px) {
+  .banner__bg {
+    height: 590px;
+    background-image: url("../assets/img/bg1-tablet@1x.png");
+  }
+}
 .banner__txt-box {
   position: relative;
   left: 60px;
 
   max-width: 500px;
+}
+@media screen and (max-width: 768px) {
+  .banner__txt-box {
+    left: 0;
+    max-width: 390px;
+  }
 }
 
 .banner__title {
@@ -277,10 +319,23 @@ body {
   font-weight: bold;
   font-size: 60px;
 }
+@media screen and (max-width: 768px) {
+  .banner__title {
+    font-weight: normal;
+    font-size: 32px;
+  }
+}
 
 .banner__txt {
   margin-top: 10px;
   font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  .banner__txt {
+    margin-top: 20px;
+
+    line-height: 1.2;
+  }
 }
 
 .banner__btn {
@@ -289,7 +344,11 @@ body {
   color: var(--color-black);
   background-color: var(--color-gold-active);
 }
-
+@media screen and (max-width: 768px) {
+  .banner__btn {
+    margin-top: 60px;
+  }
+}
 /* section Skills */
 
 .skills__list {
