@@ -48,10 +48,15 @@ body {
 
 @media screen and (max-width: 768px) {
   .container {
-    /* max-width: calc(100% - 62px * 2); */
     padding: 0 62px;
   }
 }
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 .section {
   padding-top: 100px;
 }
@@ -301,6 +306,8 @@ body {
 @media screen and (max-width: 768px) {
   .banner__bg {
     height: 590px;
+    background-size: cover;
+    background-position: 50% 50%;
     background-image: url("../assets/img/bg1-tablet@1x.png");
   }
 }
@@ -308,7 +315,7 @@ body {
   position: relative;
   left: 60px;
 
-  max-width: 500px;
+  max-width: 490px;
 }
 @media screen and (max-width: 768px) {
   .banner__txt-box {
@@ -319,12 +326,12 @@ body {
 
 .banner__title {
   font-family: "Merriweather";
-  font-weight: bold;
+  font-weight: 700;
   font-size: 60px;
 }
 @media screen and (max-width: 768px) {
   .banner__title {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 32px;
   }
 }
@@ -370,11 +377,30 @@ body {
 
   text-align: center;
 }
+@media screen and (max-width: 1380px) {
+  .skills__list {
+    gap: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .skills__list {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
     column-gap: 44px;
     row-gap: 36px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .skills__list {
+    column-gap: 15px;
+    row-gap: 25px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .skills__list {
+    grid-template-columns: 1fr;
   }
 }
 .skills__item {
@@ -388,6 +414,11 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+@media screen and (max-width: 1380px) {
+  .skills__item {
+    padding: 0 10px;
+  }
+}
 @media screen and (max-width: 768px) {
   .skills__item {
     max-width: 300px;
@@ -395,13 +426,20 @@ body {
     padding: 0 10px;
   }
 }
+@media screen and (max-width: 600px) {
+  .skills__item {
+    padding: 0;
+    max-width: 100%;
+    min-height: auto;
+  }
+}
+
 .skills__icon {
   fill: var(--color-gold-active);
 }
 
 .skills__item-title {
   margin-top: 50px;
-
   font-weight: bold;
   font-size: 20px;
   text-align: center;
@@ -411,10 +449,15 @@ body {
     margin-top: 30px;
   }
 }
+@media screen and (max-width: 600px) {
+  .skills__item-title {
+    margin-top: 15px;
+    font-size: 16px;
+  }
+}
 
 .skills__item-txt {
   margin-top: 20px;
-
   font-size: 18px;
 }
 @media screen and (max-width: 768px) {
@@ -422,7 +465,12 @@ body {
     line-height: 1.2;
   }
 }
-
+@media screen and (max-width: 600px) {
+  .skills__item-txt {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
 /* Section Portfolio */
 
 .portfolio__btn-set {
@@ -472,15 +520,37 @@ body {
 
 /* Section Video */
 
-.video-thumb {
+.video__thumb {
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  .video__container {
+    position: relative;
+    min-height: 548px;
+  }
+  .video__thumb {
+    position: static;
+  }
+}
+@media screen and (max-width: 600px) {
+  .video__container {
+    min-height: 480px;
+  }
+}
 
-.player-plaseholder {
-  /* position: absolute; */
-  /* position: relative; */
-  width: 768px;
-  height: 100%;
+@media screen and (max-width: 768px) {
+  .video__plaseholder {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    max-width: 768px;
+    min-height: 418px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .video__plaseholder {
+    min-height: auto;
+  }
 }
 .video__btn-play {
   width: 130px;
@@ -497,6 +567,19 @@ body {
   z-index: 10;
 }
 
+@media screen and (max-width: 768px) {
+  .video__btn-play {
+    width: 65px;
+    height: 65px;
+    top: 62%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .video__btn-play {
+    display: none;
+  }
+}
 .video__btn-icon {
   width: 130px;
   height: 130px;
@@ -518,15 +601,15 @@ body {
 
 .price__list {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
+  justify-content: center;
+  /* align-items: start; */
   flex-wrap: wrap;
   gap: 25px;
 }
 @media screen and (max-width: 768px) {
   .price__list {
     /* flex-direction: column; */
-    justify-content: center;
+    /* justify-content: center; */
     gap: 50px;
   }
 }
@@ -546,7 +629,12 @@ body {
     max-width: 420px;
   }
 }
-
+@media screen and (max-width: 600px) {
+  .price__item {
+    padding: 10px;
+    min-height: auto;
+  }
+}
 .card__title {
   font-family: "Merriweather";
   font-size: 28px;
