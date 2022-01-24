@@ -148,8 +148,6 @@ body {
 @media screen and (max-width: 768px) {
   .header__flex-box {
     gap: 20px;
-    /* max-width: 768px;
-    overflow-x: hidden; */
   }
 }
 .logo {
@@ -254,8 +252,9 @@ body {
     z-index: 40;
   }
   .nav {
-    position: absolute;
     display: none;
+    position: absolute;
+
     opacity: 0;
     top: 0;
     right: -800px;
