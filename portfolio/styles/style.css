@@ -1,5 +1,3 @@
-/* Ширина экрана 768px */
-
 /* font for title: */
 @font-face {
   font-family: "Merriweather";
@@ -39,6 +37,11 @@ body {
 
   background-color: var(--color-black);
   color: var(--color-txt-white);
+}
+@media screen and (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 .container {
   max-width: 1440px;
@@ -145,6 +148,8 @@ body {
 @media screen and (max-width: 768px) {
   .header__flex-box {
     gap: 20px;
+    /* max-width: 768px;
+    overflow-x: hidden; */
   }
 }
 .logo {
@@ -177,7 +182,10 @@ body {
 
     cursor: pointer;
   }
+
   .burger-menu-btn.is-active {
+    position: relative;
+    z-index: 100;
     animation: smallbig 0.6s forwards;
   }
 
@@ -215,14 +223,18 @@ body {
 }
 
 .line {
-  width: 50px;
-  height: 5px;
+  width: 57px;
+  height: 2px;
   background-color: #ecf0f1;
   display: block;
-  margin: 8px auto;
+  margin: 11px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.burger-menu-btn:hover .line,
+.burger-menu-btn:focus .line {
+  background-color: var(--color-gold-active);
 }
 
 .nav {
@@ -230,8 +242,43 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .overlay.is-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 40;
+  }
   .nav {
+    position: absolute;
     display: none;
+    opacity: 0;
+    top: 0;
+    right: -800px;
+  }
+  .nav.is-active {
+    display: block;
+    right: 0px;
+    opacity: 1;
+
+    width: 620px;
+    height: 100vh;
+    padding: 134px 127px;
+    color: white;
+    background-color: black;
+
+    z-index: 50;
+    transition: all var(--transition-duration) var(--transition-func) 1s;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nav {
+    width: 100vw;
+    padding: 60px 40px;
   }
 }
 
@@ -240,7 +287,14 @@ body {
   justify-content: space-between;
   gap: 30px;
 }
-
+@media screen and (max-width: 768px) {
+  .nav__list {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    height: 100vh;
+  }
+}
 .nav__link {
   font-weight: 400;
   font-size: 20px;
@@ -249,6 +303,12 @@ body {
   padding: 15px 0;
 
   transition: color var(--transition-duration) var(--transition-func);
+}
+@media screen and (max-width: 768px) {
+  .nav__link {
+    font-size: 35px;
+    line-height: 2.08;
+  }
 }
 
 .nav__link:hover,

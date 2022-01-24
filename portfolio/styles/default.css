@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* outline: 1px solid tomato; */
 }
 html {
   scroll-behavior: smooth;
@@ -25,6 +24,7 @@ li {
 body {
   min-height: 100vh;
 }
+
 a {
   text-decoration: none;
   color: inherit;
