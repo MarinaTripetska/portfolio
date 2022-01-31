@@ -331,8 +331,16 @@ body {
     margin-left: auto;
   }
 }
+.lang {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  color: var(--color-txt-white);
+  background-color: transparent;
+}
 
-.lang-active {
+.lang.active {
   color: var(--color-gold-active);
 }
 
