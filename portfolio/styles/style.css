@@ -556,7 +556,7 @@ body {
   background-color: inherit;
 }
 
-.portfolio__btn--active {
+.portfolio__btn.active {
   color: var(--color-black);
   background-color: var(--color-gold-active);
 }
