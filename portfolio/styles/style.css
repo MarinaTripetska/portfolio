@@ -19,6 +19,18 @@
 }
 
 :root {
+  /* changes in js: */
+  --body-color: #000;
+  --text-color: #fff;
+  --hover-color: #bdae82;
+
+  --btn-color-hover: #fff;
+  --banner-btn-bg-color: #bdae82;
+  --navigation-color-hover: #bdae82;
+  --portfolio-btn-bg-color: #000;
+  --contacts-input-bg-color: rgba(0, 0, 0, 0.5);
+
+  /* don't changes: */
   --color-txt-white: #fff;
   --color-black: #000;
   --color-gold-active: #bdae82;
@@ -35,8 +47,8 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 2;
 
-  background-color: var(--color-black);
-  color: var(--color-txt-white);
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 @media screen and (max-width: 768px) {
   body.menu-open {
@@ -82,7 +94,7 @@ body {
   font-size: 40px;
 
   margin: 0 auto 60px auto;
-  color: var(--color-gold-active);
+  color: var(--hover-color);
 }
 
 @media screen and (max-width: 768px) {
@@ -103,7 +115,7 @@ body {
   max-width: 273px;
   width: 100%;
   height: 2px;
-  background-color: var(--color-gold-active);
+  background-color: var(--hover-color);
 }
 @media screen and (max-width: 768px) {
   .section__title::before,
@@ -122,7 +134,7 @@ body {
   font-size: 20px;
   text-align: center;
 
-  border: solid 1px var(--color-gold-active);
+  border: solid 2px var(--color-gold-active);
   cursor: pointer;
 
   transition: color var(--transition-duration) var(--transition-func);
@@ -145,7 +157,7 @@ body {
 
   gap: 30px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .header__flex-box {
     gap: 20px;
   }
@@ -158,7 +170,7 @@ body {
 .logo__icon {
   width: 50px;
   height: 50px;
-  fill: var(--color-txt-white);
+  fill: var(--text-color);
   transition: fill var(--transition-duration) var(--transition-func);
 }
 .logo__icon:hover,
@@ -223,7 +235,7 @@ body {
 .line {
   width: 57px;
   height: 2px;
-  background-color: #ecf0f1;
+  background-color: var(--text-color);
   display: block;
   margin: 11px auto;
   -webkit-transition: all 0.3s ease-in-out;
@@ -267,15 +279,15 @@ body {
     width: 620px;
     height: 100vh;
     padding: 134px 127px;
-    color: white;
-    background-color: black;
+    color: var(--text-color);
+    background-color: var(--body-color);
 
     z-index: 50;
     transition: all var(--transition-duration) var(--transition-func) 1s;
   }
 }
 @media screen and (max-width: 600px) {
-  .nav {
+  .nav.is-active {
     width: 100vw;
     padding: 60px 40px;
   }
@@ -336,12 +348,32 @@ body {
   height: auto;
   padding: 0;
   border: none;
-  color: var(--color-txt-white);
+  color: var(--text-color);
   background-color: transparent;
 }
 
 .lang.active {
-  color: var(--color-gold-active);
+  color: var(--banner-btn-bg-color);
+}
+
+.theme__button {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.theme__icon {
+  width: 45px;
+  height: 45px;
+
+  fill: var(--text-color);
+  transition: fill var(--transition-func) var(--transition-duration);
+  cursor: pointer;
+}
+.theme__button:hover .theme__icon,
+.theme__button:focus .theme__icon {
+  fill: var(--navigation-color-hover);
 }
 
 /* main section */
@@ -356,6 +388,11 @@ body {
     padding: 78px 0 152px 0;
   }
 }
+@media screen and (max-width: 450px) {
+  .banner {
+    padding: 78px 0;
+  }
+}
 .banner__bg {
   position: absolute;
   top: 0;
@@ -363,12 +400,14 @@ body {
   z-index: -10;
 
   width: 100%;
-  /* max-width: 100vw; */
   height: 910px;
 
   background-image: url("../assets/img/bg1@1x.png");
   background-repeat: no-repeat;
   background-position: top;
+}
+.banner__bg.theme-light {
+  background-image: url("../assets/img/bg.jpg");
 }
 @media screen and (max-width: 768px) {
   .banner__bg {
@@ -376,6 +415,9 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background-image: url("../assets/img/bg1-tablet@1x.png");
+  }
+  .banner__bg.theme-light {
+    background-image: url("../assets/img/bg-tablet.jpg");
   }
 }
 .banner__txt-box {
@@ -410,7 +452,6 @@ body {
 @media screen and (max-width: 768px) {
   .banner__txt {
     margin-top: 20px;
-
     line-height: 1.2;
   }
 }
@@ -419,13 +460,18 @@ body {
   margin-top: 25px;
 
   color: var(--color-black);
-  background-color: var(--color-gold-active);
+  background-color: var(--banner-btn-bg-color);
+}
+.banner__btn:hover,
+.banner__btn:focus {
+  color: var(--btn-color-hover);
 }
 @media screen and (max-width: 768px) {
   .banner__btn {
     margin-top: 60px;
   }
 }
+
 /* section Skills */
 @media screen and (max-width: 768px) {
   .skills {
@@ -560,13 +606,13 @@ body {
 }
 
 .portfolio__btn {
-  color: var(--color-gold-active);
-  background-color: inherit;
+  color: var(--hover-color);
+  background-color: var(--portfolio-btn-bg-color);
 }
 
 .portfolio__btn.active {
-  color: var(--color-black);
-  background-color: var(--color-gold-active);
+  color: var(--portfolio-btn-bg-color);
+  background-color: var(--hover-color);
 }
 
 .portfolio__gallery-list {
@@ -650,7 +696,7 @@ body {
 .video__btn-icon {
   width: 130px;
   height: 130px;
-  fill: var(--color-txt-white);
+  fill: var(--text-color);
   transition: fill var(--transition-duration) var(--transition-func);
 }
 .video__btn-icon:hover,
@@ -669,14 +715,11 @@ body {
 .price__list {
   display: flex;
   justify-content: center;
-  /* align-items: start; */
   flex-wrap: wrap;
   gap: 25px;
 }
 @media screen and (max-width: 768px) {
   .price__list {
-    /* flex-direction: column; */
-    /* justify-content: center; */
     gap: 50px;
   }
 }
@@ -702,6 +745,7 @@ body {
     min-height: auto;
   }
 }
+
 .card__title {
   font-family: "Merriweather";
   font-size: 28px;
@@ -735,13 +779,20 @@ body {
 .contacts__bg {
   min-height: 700px;
   background-image: url("../assets/img/bg2@1x.png");
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
 }
+.contacts__bg.theme-light {
+  background-image: url("../assets/img/bg-contacts-day.jpg");
+}
+
 @media screen and (max-width: 768px) {
   .contacts__bg {
     min-height: 600px;
     background-image: url("../assets/img/bg2-tablet@1x.png");
+  }
+  .contacts__bg.theme-light {
+    background-image: url("../assets/img/bg-contacts-day-tablet.jpg");
   }
 }
 
@@ -766,7 +817,7 @@ body {
   font-size: 40px;
   font-weight: 700;
 
-  color: var(--color-gold-active);
+  color: var(--hover-color);
 }
 @media screen and (max-width: 768px) {
   .contacts__title {
@@ -789,10 +840,10 @@ body {
   padding: 5px 20px;
   width: 100%;
   font-size: 20px;
-
+  outline: none;
   color: var(--color-gold-active);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: solid 1px var(--color-gold-active);
+  background-color: var(--contacts-input-bg-color);
+  border: solid 2px var(--color-gold-active);
 }
 
 .contacts__input:not(:last-child) {
@@ -824,7 +875,12 @@ body {
 
 .contacts__btn-submit {
   color: var(--color-black);
-  background-color: var(--color-gold-active);
+  background-color: var(--banner-btn-bg-color);
+  border: none;
+}
+.contacts__btn-submit:hover,
+.contacts__btn-submit:focus {
+  color: var(--btn-color-hover);
 }
 @media screen and (max-width: 768px) {
   .contacts__btn-submit {
@@ -848,13 +904,11 @@ body {
   align-items: center;
 
   font-size: 20px;
-  /* line-height: 2.5; */
 }
 @media screen and (max-width: 768px) {
   .footer__thumb {
     flex-direction: column;
     align-items: center;
-    /* gap: 20px; */
   }
 }
 
@@ -863,7 +917,6 @@ body {
   justify-content: space-between;
   gap: 20px;
   max-width: 169px;
-  /* font-size: 20px; */
   line-height: 50px;
 }
 @media screen and (max-width: 768px) {
@@ -906,15 +959,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* width: 32px;
-  height: 32px; */
 }
 
 .social-link__icon {
   width: 32px;
   height: 32px;
-  fill: var(--color-txt-white);
+  fill: var(--text-color);
 
   transition: fill var(--transition-duration) var(--transition-func);
 }
