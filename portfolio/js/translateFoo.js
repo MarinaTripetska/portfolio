@@ -1,19 +1,38 @@
+//lang text obj:
 import i18nObj from "./translate.js";
-
+//refs:
 const btnsParentEl = document.querySelector(".langs");
+const btnsSet = document.querySelectorAll(".lang");
 const btnEN = document.querySelector(".langEn");
 const btnRU = document.querySelector(".langRu");
 const elementsWithTextArr = document.querySelectorAll("[data-i18n]");
 
-btnEN.addEventListener("click", (e) => {
-  getTranslate(e.target.textContent);
-});
-btnRU.addEventListener("click", (e) => {
-  getTranslate(e.target.textContent);
-});
-btnsParentEl.addEventListener("click", (e) => changeClassActive(e));
+//moduele variables:
+let languege = "en";
+
+//event listeners:
+window.addEventListener("load", getLocalStorage);
+window.addEventListener("beforeunload", setLocalStorage);
+btnsParentEl.addEventListener("click", changeClassActive);
+btnEN.addEventListener("click", (e) => getTranslate(e.target.textContent));
+btnRU.addEventListener("click", (e) => getTranslate(e.target.textContent));
+
+//Foo:
+function setLocalStorage() {
+  localStorage.setItem("lang", languege);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem("lang")) {
+    languege = localStorage.getItem("lang");
+
+    getTranslate(languege);
+    changeClassActive();
+  }
+}
 
 function getTranslate(lang) {
+  languege = lang;
   elementsWithTextArr.forEach((nodeEl) => {
     if (nodeEl.placeholder) {
       nodeEl.value = "";
@@ -23,14 +42,9 @@ function getTranslate(lang) {
   });
 }
 
-function changeClassActive(e) {
-  const elementsSet = document.querySelectorAll(".lang");
-
-  elementsSet.forEach((btn) => {
+function changeClassActive() {
+  btnsSet.forEach((btn) => {
     btn.classList.remove("active");
+    btn.textContent === languege && btn.classList.add("active");
   });
-
-  if (e.target.classList.contains("lang")) {
-    e.target.classList.add("active");
-  }
 }
