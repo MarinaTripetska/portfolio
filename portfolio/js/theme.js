@@ -1,12 +1,41 @@
+//refs:
 const btnThemeEl = document.querySelector(".theme__button");
 const iconUseEl = document.querySelector(".theme__icon--use");
 const bgBannerEl = document.querySelector(".banner__bg");
 const bgContactsEl = document.querySelector(".contacts__bg");
 
-btnThemeEl.addEventListener("click", changeTheme);
+//moduele variables:
+let theme = "dark";
 
-function changeTheme() {
-  if (iconUseEl.href.baseVal.includes("sun")) {
+//eventListeners:
+window.addEventListener("load", getLocalStorage);
+window.addEventListener("beforeunload", setLocalStorage);
+btnThemeEl.addEventListener("click", changeFlag);
+
+//Foo:
+function setLocalStorage() {
+  localStorage.setItem("theme", theme);
+}
+
+function getLocalStorage() {
+  if (localStorage.getItem("theme")) {
+    theme = localStorage.getItem("theme");
+    changeTheme(theme);
+  }
+}
+
+function changeFlag() {
+  if (theme === "light") {
+    theme = "dark";
+    changeTheme(theme);
+  } else {
+    theme = "light";
+    changeTheme(theme);
+  }
+}
+
+function changeTheme(theme) {
+  if (theme === "light") {
     //for day theme
     bgBannerEl.classList.add("theme-light");
     bgContactsEl.classList.add("theme-light");
@@ -30,8 +59,9 @@ function changeTheme() {
       "--navigation-color-hover",
       "#fff"
     );
-  } else {
+  } else if (theme === "dark") {
     //for night theme
+
     bgBannerEl.classList.remove("theme-light");
     bgContactsEl.classList.remove("theme-light");
 
