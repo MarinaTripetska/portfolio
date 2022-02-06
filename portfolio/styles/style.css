@@ -633,9 +633,6 @@ body {
 
 /* Section Video */
 
-.video__thumb {
-  position: relative;
-}
 @media screen and (max-width: 768px) {
   .video__container {
     position: relative;
@@ -650,22 +647,10 @@ body {
     min-height: 480px;
   }
 }
-
-@media screen and (max-width: 768px) {
-  .video__plaseholder {
-    position: absolute;
-    top: 130px;
-    left: 0;
-    max-width: 768px;
-    min-height: 418px;
-  }
+.video__thumb {
+  position: relative;
 }
-@media screen and (max-width: 600px) {
-  .video__plaseholder {
-    min-height: auto;
-  }
-}
-.video__btn-play {
+.video__big-btn-play {
   width: 130px;
   height: 130px;
   position: absolute;
@@ -679,18 +664,21 @@ body {
   cursor: pointer;
   z-index: 10;
 }
-
+.video__big-btn-play.hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 @media screen and (max-width: 768px) {
-  .video__btn-play {
+  .video__big-btn-play {
     width: 65px;
     height: 65px;
     top: 62%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .video__btn-play {
-    display: none;
   }
 }
 .video__btn-icon {
@@ -699,8 +687,8 @@ body {
   fill: var(--text-color);
   transition: fill var(--transition-duration) var(--transition-func);
 }
-.video__btn-icon:hover,
-.video__btn-icon:focus {
+.video__big-btn-play .video__btn-icon:hover,
+.video__big-btn-play .video__btn-icon:focus {
   fill: var(--color-gold-active);
 }
 @media screen and (max-width: 768px) {
@@ -708,6 +696,82 @@ body {
     width: 65px;
     height: 65px;
   }
+}
+.player {
+}
+.player__video {
+}
+.player__controls {
+}
+
+/* .progress__field {
+} */
+
+.player__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+.player__btn--icon {
+  width: 40px;
+  height: 36px;
+  fill: currentColor;
+}
+.progress-range {
+  background-color: #c4c4c4;
+
+  width: 100%;
+  height: 8px;
+  margin: 0;
+  outline: none;
+  transition: background-image 450ms ease-in;
+  -webkit-appearance: none;
+
+  max-width: 929px;
+  background-image: linear-gradient(
+    to right,
+    #710707 0%,
+    #710707 1%,
+    #c4c4c4 1%,
+    #c4c4c4 100%
+  );
+}
+
+.volume-range {
+  background-color: #c4c4c4;
+
+  width: 100%;
+  height: 8px;
+  margin: 0;
+  outline: none;
+  transition: background-image 450ms ease-in;
+  -webkit-appearance: none;
+
+  max-width: 250px;
+  background-image: linear-gradient(
+    to right,
+    #710707 0%,
+    #710707 35%,
+    #c4c4c4 35%,
+    #c4c4c4 100%
+  );
+}
+.progress-range::-webkit-slider-thumb,
+.volume-range::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  background: #fff;
 }
 
 /* Section Price  */
