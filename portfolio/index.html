@@ -266,21 +266,67 @@
       <section class="section video">
         <div class="container video__container">
           <h2 id="video" class="section__title" data-i18n="video">Video</h2>
-          <div class="video__thumb">
-            <button type="button" class="video__btn-play">
-              <svg class="video__btn-icon">
+          <div class="video__thumb player">
+            <div class="player__poster"></div>
+            <button type="button" class="video__big-btn-play">
+              <svg class="video_big-btn-icon">
                 <use
                   xlink:href="./assets/svg/sprite.svg#icon-player-play"
                 ></use>
               </svg>
             </button>
-            <picture class="video__plaseholder">
-              <source
-                srcset="./assets/img/video-player-tablet.jpg 1x"
-                type="image/jpg"
-                media="(max-width:768px)" />
-              <img src="./assets/img/video-player.jpg" alt="video plaseholder"
-            /></picture>
+
+            <video class="player__video" src="./assets/video/video.mp4"></video>
+
+            <div class="player__controls">
+              <button class="player__btn togle" title="button play/stop video">
+                <svg class="player__btn--icon">
+                  <use
+                    class="player__btn--use"
+                    xlink:href="./assets/svg/sprite.svg#play-btn"
+                  ></use>
+                </svg>
+              </button>
+
+              <input
+                type="range"
+                class="progress-range"
+                name="progress"
+                value="0"
+                min="0"
+                max="100"
+                step="1"
+                title="range to change video current time  / rewind"
+              />
+
+              <button
+                class="player__btn volume-togle"
+                title="button on/off volume"
+              >
+                <svg class="player__btn--icon">
+                  <use
+                    class="player__volume--use"
+                    xlink:href="./assets/svg/sprite.svg#volume-on"
+                  ></use>
+                </svg>
+              </button>
+
+              <input
+                type="range"
+                name="volume"
+                class="volume-range"
+                min="0"
+                max="100"
+                step="1"
+                value="35"
+                title="range to change volume"
+              />
+              <span class="time">
+                <span class="current-time"></span>
+                <span>/</span>
+                <span class="duration-time"></span
+              ></span>
+            </div>
           </div>
         </div>
       </section>
