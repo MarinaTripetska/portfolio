@@ -1,6 +1,10 @@
 //refs:
+const container = document.querySelector(".video__container");
+
 const player = document.querySelector(".player");
 const video = player.querySelector(".player__video");
+
+const poster = player.querySelector(".player__poster");
 
 const progressBtnToggle = player.querySelector(".togle");
 const bigBtnPlay = player.querySelector(".video__big-btn-play");
@@ -11,20 +15,36 @@ const volumeRange = player.querySelector(".volume-range");
 const volumeBtnTogle = player.querySelector(".volume-togle");
 
 const currentTime = player.querySelector(".current-time");
-const durationVideo = player.querySelector(".duration");
+const durationVideo = player.querySelector(".duration-time");
 
 //flags:
 let volumeOn = true;
 
+//media query from js:
+// Create a condition that targets viewports at max-width 768px wide
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+function handleTabletChange(e) {
+  e.matches && container.classList.remove("container");
+  !e.matches && container.classList.add("container");
+}
+// Register event listener
+mediaQuery.addEventListener("change", handleTabletChange);
+// Initial check
+handleTabletChange(mediaQuery);
+
 //Show time duration:
 function createView() {
-  currentTime.innerHTML = parseInt(video.currentTime);
-  durationVideo.innerHTML = parseInt(video.duration);
+  currentTime.innerHTML = `0:00`;
+  durationVideo.innerHTML = `0:${parseInt(video.duration)}`;
 }
+
 //Togle play foo:
 function togglePlay() {
   const method = video.paused ? "play" : "pause";
   video[method]();
+  if (method === "play") {
+    poster.classList.add("hidden");
+  }
 }
 
 function toggleBtnsVue() {
@@ -39,14 +59,18 @@ function toggleBtnsVue() {
 
 //Progress update foo:
 function changeRangeStyle(range) {
-  range.style.background = `linear-gradient(to right, #710707 0%, #710707 ${range.value}%, #C4C4C4 ${range.value}%, #C4C4C4 100%)`;
+  range.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${range.value}%, #C4C4C4 ${range.value}%, #C4C4C4 100%)`;
 }
 
 function autoUpdateProgress() {
   progressRange.value = (100 * this.currentTime) / this.duration;
   changeRangeStyle(progressRange);
-
-  currentTime.innerHTML = parseInt(video.currentTime);
+  const time = String(parseInt(video.currentTime));
+  if (time.length === 1) {
+    currentTime.innerHTML = `0:0${time}`;
+  } else if (time.length === 2) {
+    currentTime.innerHTML = `0:${time}`;
+  }
 }
 
 function videoHandleRewind(e) {
@@ -60,7 +84,8 @@ function videoHandleRewind(e) {
   video.play();
 }
 
-//Volume update foo:\
+//Volume update foo
+
 function toggleVolumeVue() {
   const iconEl = volumeBtnTogle.querySelector(".player__volume--use");
   const iconValue = volumeOn ? "on" : "off";

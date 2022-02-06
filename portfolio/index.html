@@ -267,34 +267,16 @@
         <div class="container video__container">
           <h2 id="video" class="section__title" data-i18n="video">Video</h2>
           <div class="video__thumb player">
-            <!-- <button type="button" class="video__btn-play">
-              <svg class="video__btn-icon">
-                <use
-                  xlink:href="./assets/svg/sprite.svg#icon-player-play"
-                ></use>
-              </svg>
-            </button>
-            <picture class="video__plaseholder">
-              <source
-                srcset="./assets/img/video-player-tablet.jpg 1x"
-                type="image/jpg"
-                media="(max-width:768px)" />
-              <img src="./assets/img/video-player.jpg" alt="video plaseholder"
-            /></picture> -->
-
+            <div class="player__poster"></div>
             <button type="button" class="video__big-btn-play">
-              <svg class="video__btn-icon">
+              <svg class="video_big-btn-icon">
                 <use
                   xlink:href="./assets/svg/sprite.svg#icon-player-play"
                 ></use>
               </svg>
             </button>
 
-            <video
-              class="player__video"
-              src="./assets/video/video.mp4"
-              poster="./assets/img/video-player.jpg"
-            ></video>
+            <video class="player__video" src="./assets/video/video.mp4"></video>
 
             <div class="player__controls">
               <button class="player__btn togle" title="button play/stop video">
@@ -316,11 +298,6 @@
                 step="1"
                 title="range to change video current time  / rewind"
               />
-              <span>
-                <span class="current-time"></span>
-                <span>/</span>
-                <span class="duration"></span
-              ></span>
 
               <button
                 class="player__btn volume-togle"
@@ -344,6 +321,11 @@
                 value="35"
                 title="range to change volume"
               />
+              <span class="time">
+                <span class="current-time"></span>
+                <span>/</span>
+                <span class="duration-time"></span
+              ></span>
             </div>
           </div>
         </div>
